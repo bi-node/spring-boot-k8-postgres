@@ -54,6 +54,8 @@ All secrets have to be base64 encoded.
 ---
 - **web-app-config.yaml**: contains configuration variables for Spring Boot application (e.g. Spring active profiles)
 - **web-app.yaml**: deployment and service configuration for Spring Boot App
+- **web-ingress.yaml**: external K8 integrated Load Balancer which responsibility is to route traffic 
+to internal services
 
 ### Running the Kubernetes on Minikube
 For running the apps on Kubernetes first make sure to start the Minikube local K8 cluster by executing the command:

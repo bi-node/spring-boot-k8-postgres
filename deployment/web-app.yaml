@@ -49,11 +49,11 @@ kind: Service
 metadata:
   name: spring-service
 spec:
-  type: NodePort # External Service (Default: ClusterIP => internal service)
+  type: ClusterIP # Internal Service (NodePort => external service)
   selector:
     app: spring
   ports:
     - protocol: TCP
       port: 8080
       targetPort: 8080
-      nodePort: 30100
+      # nodePort: 30100 # only for external services (not recommended)
