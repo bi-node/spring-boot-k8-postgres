@@ -49,11 +49,12 @@ kind: Service
 metadata:
   name: spring-service
 spec:
-  type: ClusterIP # Internal Service
+  type: NodePort # Internal Service
   selector:
     app: spring
   ports:
     - protocol: TCP
       port: 8080
       targetPort: 8080
+      nodePort: 30036
 #      nodePort: 30036 # Ensure this port is set
