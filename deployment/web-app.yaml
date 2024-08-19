@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
         - name: spring
-          image: spring-app:1.0
-          imagePullPolicy: Never
+          image: binodleo/spring-pod:1.0
+          imagePullPolicy: IfNotPresent # Change to IfNotPresent
           ports:
             - containerPort: 8080
           env:
@@ -49,11 +49,11 @@ kind: Service
 metadata:
   name: spring-service
 spec:
-  type: ClusterIP # Internal Service (NodePort => external service)
+  type: ClusterIP # Internal Service
   selector:
     app: spring
   ports:
     - protocol: TCP
       port: 8080
       targetPort: 8080
-      # nodePort: 30100 # only for external services (not recommended)
+#      nodePort: 30036 # Ensure this port is set
